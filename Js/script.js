@@ -48,3 +48,27 @@ function Drink(){
   }
 }
 Drink();
+
+
+//SE AGREGA UN OBJETO 
+class Trago{
+  constructor(nombre, compuesto, acompaniado, garnish, precio ){
+   this.nombre = nombre.toUpperCase();
+   this.compuesto = compuesto;
+   this.acompañado = acompaniado;
+   this.garnish = garnish;
+   this.precio = parseFloat(precio);
+ }
+ precioHappyHour(){
+  this.precio = this.precio / 1.5;
+ }
+} 
+
+const trago1 = new Trago("Old fashioned", "Bourbon", "Angostura", "Rodaja de naranja", 1100);
+const trago2 = new Trago("Fernet con Coca", "Fernet Branca", "Coca-Cola", "Espuma y Hielo", 800);
+
+//SE AGREGA UN ARRAY
+const carta = [trago1, trago2];
+carta.push(new Trago("Garibaldi", "Campari", "Jugo de Naranja", "Rodaja de Naranja", 850));
+
+for (const producto of carta) producto.precioHappyHour();
